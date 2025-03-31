@@ -65,7 +65,7 @@ function App() {
             onChange={handleChange}
           />
           <label className="form-check-label" htmlFor="public">Public</label>
-          <button
+          <button onClick={ }
             type="submit"
             className="btn btn-secondary mt-5 onClick">Submit
 
