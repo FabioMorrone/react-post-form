@@ -10,7 +10,7 @@ function App() {
     public: true,
   })
 
-  function handleClick(e) {
+  function handleChange(e) {
     const value =
       e.target.type === "checkbox" ?
         e.target.checked : e.target.value;
@@ -34,7 +34,7 @@ function App() {
             className="form-control mb-2"
             placeholder="author"
             value={post.author}
-            onChange={handleClick}
+            onChange={handleChange}
 
           />
           <input
@@ -43,7 +43,7 @@ function App() {
             className="form-control mb-2"
             placeholder="title"
             value={post.title}
-            onChange={handleClick}
+            onChange={handleChange}
 
           />
           <input
@@ -52,7 +52,7 @@ function App() {
             className="form-control mb-2"
             placeholder="body"
             value={post.body}
-            onChange={handleClick}
+            onChange={handleChange}
 
           />
 
@@ -62,9 +62,15 @@ function App() {
             id="public"
             name="public"
             value={post.public}
-            onChange={handleClick}
+            onChange={handleChange}
           />
-          <button type="submit" className="btn btn-secondary mt-5">Submit</button>
+          <label className="form-check-label" htmlFor="public">Public</label>
+          <button
+            type="submit"
+            className="btn btn-secondary mt-5 onClick">Submit
+
+
+          </button>
         </form>
 
       </div>
