@@ -1,2 +1,11 @@
 @import 'bootstrap';
-@import 'bootstrap icons';
+
+body {
+    background-color: rgb(51, 255, 0);
+
+}
+
+.form-control {
+    background-color: rgb(80, 79, 79);
+
+}
