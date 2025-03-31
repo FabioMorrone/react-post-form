@@ -1,16 +1,26 @@
 import { useState } from 'react'
 
-
+const api_endpoint = 'https://67c5b4f3351c081993fb1ab6.mockapi.io/api/posts'
 
 function App() {
   const [post, setPost] = useState({
     author: '',
     title: '',
     body: '',
-    public: '',
+    public: true,
   })
 
+  function handleClick(e) {
+    const value =
+      e.target.type === "checkbox" ?
+        e.target.checked : e.target.value;
+    setPost((post) => ({
+      ...post,
+      [e.target.name]: value,
 
+    }));
+    console.log(post);
+  }
 
 
   return (
@@ -21,30 +31,38 @@ function App() {
           <input
             type="text"
             name="author"
-            class="form-control mb-2"
+            className="form-control mb-2"
             placeholder="author"
+            value={post.author}
+            onChange={handleClick}
 
           />
           <input
             type="text"
             name="title"
-            class="form-control mb-2"
+            className="form-control mb-2"
             placeholder="title"
+            value={post.title}
+            onChange={handleClick}
 
           />
           <input
             type="text"
             name="body"
-            class="form-control mb-2"
+            className="form-control mb-2"
             placeholder="body"
+            value={post.body}
+            onChange={handleClick}
 
           />
-          <input
-            type="text"
-            name="public"
-            class="form-control mb-2"
-            placeholder="public"
 
+          <input
+            type="checkbox"
+            className="form-check-input"
+            id="public"
+            name="public"
+            value={post.public}
+            onChange={handleClick}
           />
           <button type="submit" className="btn btn-secondary mt-5">Submit</button>
         </form>
