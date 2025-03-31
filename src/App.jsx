@@ -21,7 +21,9 @@ function App() {
     }));
     console.log(post);
   }
-
+  handleClick = () => {
+    console.log(post);
+  };
 
   return (
     <>
@@ -65,11 +67,9 @@ function App() {
             onChange={handleChange}
           />
           <label className="form-check-label" htmlFor="public">Public</label>
-          <button onClick={ }
+          <button onClick={handleClick}
             type="submit"
             className="btn btn-secondary mt-5 onClick">Submit
-
-
           </button>
         </form>
 
